@@ -1,0 +1,69 @@
+/* Imagen original limpia con flotación sutil */
+.foto-perfil-limpia {
+  max-width: 340px;
+  width: 100%;
+  height: auto; /* Mantiene su proporción real sin aplastarla */
+  animation: flotarSuave 4s ease-in-out infinite;
+}
+
+@keyframes flotarSuave {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.texto-typewriter {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(245, 239, 234, 0.88);
+  min-height: 120px;
+}
+
+.cursor-escribiendo {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background-color: var(--old-rose);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: parpadeo 0.7s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Aparece suavemente al terminar de escribir */
+.acciones-perfil {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.acciones-perfil.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.redes-editorial a {
+  color: var(--sky-blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.redes-editorial a:hover { color: var(--old-rose); }
+
+.btn-editorial {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  border: 1px solid var(--old-rose);
+  color: var(--text-cream);
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+.btn-editorial:hover {
+  background-color: var(--old-rose);
+  color: var(--bg-dark);
+}

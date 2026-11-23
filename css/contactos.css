@@ -1,0 +1,90 @@
+.michi-escenario {
+  position: relative;
+  width: 260px;
+  height: 155px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 0px;
+  z-index: 7;
+  pointer-events: none;
+  overflow: hidden; /* Corta la base de la pata para que parezca que sale detrás del formulario */
+}
+
+.michi-halo {
+  position: absolute;
+  bottom: 8px;
+  width: 210px;
+  height: 130px;
+  background: radial-gradient(circle, rgba(212, 150, 167, 0.28) 0%, rgba(161, 205, 241, 0.12) 50%, transparent 72%);
+  filter: blur(14px);
+  z-index: 1;
+}
+
+.michi-img {
+  position: relative;
+  z-index: 2;
+  width: 230px;
+  height: 230px;
+  display: block;
+  transform: translateY(0px);
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 0 2px rgba(245, 239, 234, 0.6))
+          drop-shadow(0 0 10px rgba(212, 150, 167, 0.8));
+}
+
+/* Baja la patita 58px para que salga desde el borde del formulario */
+.michi-img.pose-pata {
+  transform: translateY(58px);
+}
+
+/* Baja la caja 60px para que quede sentada encima del formulario */
+.michi-img.pose-caja {
+  transform: translateY(60px);
+}
+
+.form-editorial {
+  position: relative;
+  z-index: 6;
+  background: #211A19 !important;
+  border: 1px solid rgba(212, 150, 167, 0.25) !important;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.input-editorial {
+  background-color: #181312 !important;
+  border: 1px solid rgba(245, 239, 234, 0.15) !important;
+  color: #F5EFEA !important;
+  border-radius: 10px !important;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.input-editorial::placeholder {
+  color: rgba(245, 239, 234, 0.4) !important;
+}
+
+.input-editorial:focus {
+  background-color: #181312 !important;
+  border-color: #D496A7 !important;
+  box-shadow: 0 0 0 3px rgba(212, 150, 167, 0.18) !important;
+  color: #F5EFEA !important;
+}
+
+.btn-editorial {
+  background-color: #F5EFEA !important;
+  color: #181312 !important;
+  border: none !important;
+  border-radius: 50px !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-editorial:hover {
+  background-color: #D496A7 !important;
+  color: #181312 !important;
+  transform: translateY(-2px);
+}

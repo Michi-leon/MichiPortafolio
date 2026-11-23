@@ -1,0 +1,98 @@
+/* COLUMNA LATERAL DE ACCESOS DIRECTOS */
+.accesos-lateral {
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(245, 239, 234, 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.accesos-etiqueta {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--old-rose);
+  font-weight: 600;
+}
+
+.acceso-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.42rem 0.7rem;
+  border-radius: 11px;
+  text-decoration: none;
+  background: rgba(14, 12, 11, 0.55);
+  border: 1px solid rgba(245, 239, 234, 0.08);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.acceso-item:hover {
+  transform: translateX(5px);
+  border-color: var(--sky-blue);
+  background: rgba(161, 205, 241, 0.08);
+}
+
+.acceso-icono {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 150, 167, 0.14);
+  color: var(--old-rose);
+  font-size: 0.92rem;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.acceso-item:hover .acceso-icono {
+  background: var(--sky-blue);
+  color: #181312;
+}
+
+.acceso-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  overflow: hidden;
+}
+
+.acceso-info small {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(245, 239, 234, 0.45);
+}
+
+.acceso-info span {
+  font-size: 0.82rem;
+  color: var(--text-cream);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* FOOTER DE UNA SOLA LÍNEA FINA */
+.footer-editorial {
+  z-index: 5;
+  margin-top: 10px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.footer-linea {
+  height: 1px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 6px auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(161, 205, 241, 0.28) 25%,
+    rgba(212, 150, 167, 0.4) 50%,
+    rgba(161, 205, 241, 0.28) 75%,
+    transparent 100%
+  );
+}

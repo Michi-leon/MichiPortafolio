@@ -1,0 +1,52 @@
+.custom-nav {
+  background: transparent;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  z-index: 20;
+}
+
+.logo-michi {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--text-cream) !important;
+  transition: color 0.3s;
+}
+
+.logo-michi:hover { color: var(--old-rose) !important; }
+
+.custom-nav .nav-link {
+  color: rgba(245, 239, 234, 0.7) !important;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.custom-nav .nav-link:hover,
+.custom-nav .nav-link.active {
+  color: var(--old-rose) !important;
+}
+/* Indicador deslizante detrás de la opción activa */
+.nav-pill {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 36px;
+  background: rgba(212, 150, 167, 0.16);
+  border: 1px solid rgba(212, 150, 167, 0.45);
+  border-radius: 50px;
+  transition: left 0.38s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#navMenu .nav-link {
+  position: relative;
+  z-index: 1;
+  padding: 0.45rem 1.1rem !important;
+  transition: color 0.3s ease;
+}
+
+#navMenu .nav-link.active {
+  color: var(--old-rose) !important;
+  font-weight: 600;
+}

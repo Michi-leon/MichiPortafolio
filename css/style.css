@@ -1,0 +1,264 @@
+/* =========================================
+   1. VARIABLES Y BASE EDITORIAL OSCURA
+   ========================================= */
+:root {
+  --bg-dark: #181312;
+  --text-cream: #F5EFEA;
+  --sky-blue: #A1CDF1;
+  --old-rose: #D496A7;
+  --terracotta: #9D695A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Elimina las barras de desplazamiento */
+  background-color: var(--bg-dark) !important;
+  color: var(--text-cream) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* =========================================
+   2. SISTEMA DE PANTALLAS FULL-SCREEN
+   ========================================= */
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pantalla {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s;
+  z-index: 1;
+}
+
+.pantalla.activa {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+/* Títulos editoriales generales */
+.seccion-subtitulo {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--sky-blue);
+  margin-bottom: 0.5rem;
+}
+
+.titulo-seccion {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--text-cream);
+}
+
+.titulo-seccion em {
+  color: var(--old-rose);
+  font-style: italic;
+}
+
+/* =========================================
+   3. ANIMACIONES PROPIAS (CSS PURO)
+   ========================================= */
+@keyframes miFadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes miRubberBand {
+  0% { transform: scale3d(1, 1, 1); }
+  30% { transform: scale3d(1.18, 0.82, 1); }
+  40% { transform: scale3d(0.85, 1.15, 1); }
+  50% { transform: scale3d(1.08, 0.92, 1); }
+  65% { transform: scale3d(0.96, 1.04, 1); }
+  75% { transform: scale3d(1.03, 0.97, 1); }
+  100% { transform: scale3d(1, 1, 1); }
+}
+
+@keyframes miPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.anim-entrada {
+  animation: miFadeInUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-elastico:hover {
+  animation: miRubberBand 0.75s ease;
+}
+
+.anim-pulso {
+  animation: miPulse 2.2s ease-in-out infinite;
+}
+
+/* =========================================
+   4. EFECTOS ACTUALIZADOS POR SECCIÓN
+   ========================================= */
+.anim-hero-titulo {
+  animation: revelarEditorial 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+.anim-hero-desc {
+  animation: revelarEditorial 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+@keyframes revelarEditorial {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.brillo-permanente {
+  background: linear-gradient(90deg, var(--sky-blue) 0%, #ffffff 50%, var(--old-rose) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flujoBrillo 4s linear infinite;
+}
+
+@keyframes flujoBrillo {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.proyecto-link {
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.proyecto-item:hover .proyecto-link {
+  transform: translateX(8px);
+  color: var(--old-rose);
+}
+
+.proyecto-fecha {
+  font-size: 0.85rem;
+  color: rgba(245, 239, 234, 0.55);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.proyecto-item:hover .proyecto-fecha {
+  color: var(--text-cream);
+}
+
+@keyframes miTimbre {
+  0%, 100% { transform: rotate(0deg) scale(1.2); }
+  20% { transform: rotate(18deg) scale(1.25); }
+  40% { transform: rotate(-16deg) scale(1.25); }
+  60% { transform: rotate(12deg) scale(1.2); }
+  80% { transform: rotate(-8deg) scale(1.2); }
+}
+
+.proyecto-item:hover .proyecto-icono {
+  color: var(--sky-blue);
+  animation: miTimbre 0.65s ease-in-out;
+}
+
+/* Habilidades: Tarjetas llegan volando desde los bordes */
+@keyframes volarDesdeIzq {
+  from { opacity: 0; transform: translate(-90px, 20px) rotate(-8deg); }
+  to { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes volarDesdeArriba {
+  from { opacity: 0; transform: translate(0, -80px) scale(0.9); }
+  to { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+@keyframes volarDesdeAbajo {
+  from { opacity: 0; transform: translate(0, 80px) scale(0.9); }
+  to { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+@keyframes volarDesdeDer {
+  from { opacity: 0; transform: translate(90px, 20px) rotate(8deg); }
+  to { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+}
+
+.anim-vuelo.vuelo-izq { animation: volarDesdeIzq 0.75s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.anim-vuelo.vuelo-arriba { animation: volarDesdeArriba 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both; }
+.anim-vuelo.vuelo-abajo { animation: volarDesdeAbajo 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.anim-vuelo.vuelo-der { animation: volarDesdeDer 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+
+/* Efecto Secreto: Juntar y repartir cartas */
+.skill-col {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
+}
+
+.skill-col.barajando {
+  transform: scale(0.75) rotate(6deg);
+  opacity: 0.35;
+}
+
+.secreto-toast {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 50px;
+  background: rgba(212, 150, 167, 0.15);
+  border: 1px solid var(--old-rose);
+  color: var(--old-rose);
+  font-size: 0.78rem;
+  animation: revelarEditorial 0.35s ease;
+}
+/* Efecto enfoque interactivo en el párrafo de Inicio */
+.palabra-desc {
+  display: inline-block;
+  margin: 0 2px;
+  transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease;
+  cursor: default;
+}
+
+.palabra-desc:hover {
+  color: var(--sky-blue);
+  transform: translateY(-3px) scale(1.02);
+  text-shadow: 0 0 14px rgba(161, 205, 241, 0.45);
+}
+
+/* Secreto en Proyectos: Modo Blueprint / Plano Técnico */
+#sec-1.modo-blueprint .proyecto-preview {
+  border: 1px dashed var(--sky-blue) !important;
+  background-image: 
+    linear-gradient(rgba(161, 205, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(161, 205, 241, 0.08) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+  box-shadow: 0 0 25px rgba(161, 205, 241, 0.18);
+}
+
+#sec-1.modo-blueprint .proyecto-item {
+  border-bottom: 1px dashed rgba(161, 205, 241, 0.45) !important;
+  background: rgba(161, 205, 241, 0.04);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+}
+
+#sec-1.modo-blueprint .proyecto-link {
+  color: var(--sky-blue) !important;
+  font-family: monospace;
+}

@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <title>Michelle Cameron Leon Leyva — Portafolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Bootstrap CSS v5.3.8 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fuentes Editoriales -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/xD.jpeg" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/proyectos.css">
+  <link rel="stylesheet" href="css/presentacion.css">
+  <link rel="stylesheet" href="css/habilidades.css">
+  <link rel="stylesheet" href="css/testimonio.css">
+  <link rel="stylesheet" href="css/contactos.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+      <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand logo-michi anim-elastico" href="#" onclick="irASeccion(0)">
+          <i class="fa-solid fa-cat me-2"></i>Michi
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav gap-lg-2 position-relative" id="navMenu">
+            <div class="nav-pill" id="navPill"></div>
+            <li class="nav-item"><a class="nav-link active" href="#" data-sec="0">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sec="1">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sec="2">Perfil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sec="3">Habilidades</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sec="4">Testimonios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sec="5">Contactos</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PANTALLA 1: INICIO -->
+    <section class="pantalla activa" id="sec-0">
+      <div class="luz-cursor" id="luzCursor"></div>
+      <div class="resplandor-inferior"></div>
+      <div id="particulas-container"></div>
+
+      <div class="container h-100 d-flex flex-column justify-content-between py-5">
+        <div></div>
+        <div class="hero-centro text-center mx-auto">
+          <span class="etiqueta-interactiva" id="subtituloHero">Diseño & Desarrollo de Software</span>
+          <h1 class="titulo-interactivo anim-hero-titulo">
+            <span class="palabra-hover">Creando</span> 
+            <span class="palabra-hover">experiencias</span> 
+            <span class="palabra-hover">digitales</span> 
+            <span class="palabra-hover">con</span> 
+            <span class="palabra-hover">propósito.</span>
+          </h1>
+          <p class="descripcion mx-auto anim-hero-desc" id="parrafoHero">
+            Hola, soy Michelle Cameron. Transformo ideas en código limpio e interfaces memorables.
+          </p>
+        </div>
+
+        <div class="hero-footer text-center" onclick="irASeccion(1)">
+          <div class="linea-scroll mx-auto"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: PROYECTOS / GALERÍA -->
+    <section class="pantalla" id="sec-1">
+      <div class="container h-100 d-flex align-items-center pt-5">
+        <div class="row w-100 align-items-center g-5">
+          
+          <!-- Imagen de fondo + Video -->
+          <div class="col-lg-6">
+            <div class="proyecto-preview" id="previewBox" onclick="reproducirVideoProyecto()">
+              <video id="proyectoVideo" class="video-preview d-none" controls></video>
+              <div class="preview-overlay" id="previewOverlay">
+                <div class="btn-play anim-pulso"><i class="fa-solid fa-play"></i></div>
+                <span class="preview-tag" id="previewTag">WEB APP • HTML, CSS & JS</span>
+                <h3 class="preview-titulo" id="previewTitle">Gestión Académica</h3>
+                <p class="preview-desc" id="previewDesc">Plataforma web para administración de horarios, notas y asistencia.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lista derecha -->
+          <div class="col-lg-6">
+            <span class="seccion-subtitulo brillo-permanente">GALERÍA DE PROYECTOS</span>
+            <div class="proyectos-lista mt-3" id="listaProyectos">
+              
+              <div class="proyecto-item" 
+                   data-img="img/FRONT-ACADEMIA.png" 
+                   data-video="img/Acamademia-Front-Portafolio.mp4"
+                   data-video-blueprint="img/codigo1.mp4"
+                   data-tag="WEB APP • HTML, CSS & JS"
+                   data-title="Gestión Académica"
+                   data-desc="Plataforma web para administración de horarios, notas y asistencia.">
+                <a href="https://academia.freepage.cc/?i=1" target="_blank" class="proyecto-link">
+                  Academia <i class="fa-solid fa-arrow-up-right-from-square ms-2 fs-6"></i>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="proyecto-fecha">2026</span>
+                  <span class="proyecto-icono"><i class="fa-solid fa-graduation-cap"></i></span>
+                </div>
+              </div>
+
+              <div class="proyecto-item" 
+                   data-img="img/FRONT-CLIMA.png" 
+                   data-video="img/demo2.mp4"
+                   data-video-blueprint="img/front-clima.mp4"
+                   data-tag="DISEÑO UI/UX • BOOTSTRAP"
+                   data-title="Clima del Perú"
+                   data-desc="Aplicación web interactiva con diseño adaptativo y consulta meteorológica.">
+                <a href="https://michi-leon.github.io/clase11_Interfaces/" target="_blank" class="proyecto-link">
+                  Clima del Perú <i class="fa-solid fa-arrow-up-right-from-square ms-2 fs-6"></i>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="proyecto-fecha">2026</span>
+                  <span class="proyecto-icono"><i class="fa-solid fa-cloud-sun"></i></span>
+                </div>
+              </div>
+
+              <div class="proyecto-item" 
+                   data-img="img/FRONT-CEVICHERIA.png" 
+                   data-video="img/front-cevicheria.mp4"
+                   data-video-blueprint="img/codigo3.mp4"
+                   data-tag="WEB GASTRONÓMICA • UI EDITORIAL"
+                   data-title="Sabor del Pacífico"
+                   data-desc="Experiencia web gastronómica con cartas interactivas y diseño responsivo.">
+                <a href="https://stunning-caramel-918393.netlify.app/" target="_blank" class="proyecto-link">
+                  Sabor del Pacífico <i class="fa-solid fa-arrow-up-right-from-square ms-2 fs-6"></i>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="proyecto-fecha">2026</span>
+                  <span class="proyecto-icono"><i class="fa-solid fa-utensils"></i></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: PERFIL -->
+    <section class="pantalla" id="sec-2">
+      <div class="container h-100 d-flex align-items-center pt-5">
+        <div class="row w-100 align-items-center justify-content-center g-5">
+          
+          <!-- Texto -->
+          <div class="col-lg-7 text-center text-lg-start order-2 order-lg-1">
+            <h2 class="titulo-seccion mb-3" id="tituloSobreMi"></h2>
+            <p class="texto-typewriter mb-4" id="textoSobreMi"></p>
+
+            <div class="acciones-perfil" id="accionesPerfil">
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-4 mb-4 redes-editorial">
+                <a href="https://wa.me/51968775429" target="_blank"><i class="fa-brands fa-whatsapp me-2"></i>+51 968 775 429</a>
+                <a href="https://www.linkedin.com/in/michelle-cameron-leon-leyva-076a423b7/" target="_blank"><i class="fa-brands fa-linkedin me-2"></i>Michelle Cameron Leon Leyva</a>
+                <a href="https://www.tiktok.com/@mishileonidas" target="_blank"><i class="fa-brands fa-tiktok me-2"></i>@michileonidas</a>
+              </div>
+
+              <a href="img/CV_Michelle.pdf" download class="btn-editorial anim-elastico">
+                Descargar CV <i class="fa-solid fa-download ms-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Imagen -->
+          <div class="col-lg-5 text-center order-1 order-lg-2">
+            <img src="img/Michelle.png" alt="Michelle" class="img-fluid foto-perfil-limpia" id="avatarPerfil">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: HABILIDADES -->
+    <section class="pantalla" id="sec-3">
+      <div class="container h-100 d-flex flex-column justify-content-center pt-5">
+        <div class="text-center mb-4 position-relative">
+          <span class="seccion-subtitulo brillo-permanente" id="secretoStack" style="cursor: default;">STACK TECNOLÓGICO</span>
+          <h2 class="titulo-seccion titulo-habilidades-anim">Mis <em>Habilidades</em></h2>
+          <div id="michiSecretoToast" class="secreto-toast d-none">🐾 ¡Barajando cartas!</div>
+        </div>
+
+        <div class="row g-4" id="gridHabilidades">
+          
+          <!-- Tarjeta 1: Programming -->
+          <div class="col-md-6 col-lg-3 skill-col">
+            <div class="flip-card vuelo-izq">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-solid fa-code simbolo-habilidad"></i>
+                  <h4>Programming</h4>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                    <span class="pill-skill" data-lang="python">Python</span>
+                    <span class="pill-skill" data-lang="java">Java</span>
+                    <span class="pill-skill" data-lang="js">JavaScript</span>
+                  </div>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Lógica & Algoritmos</h5>
+                  <p>Desarrollo de scripts automatizados, programación orientada a objetos (POO) y lógica interactiva para web.</p>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Web Development -->
+          <div class="col-md-6 col-lg-3 skill-col">
+            <div class="flip-card vuelo-arriba">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-regular fa-window-restore simbolo-habilidad"></i>
+                  <h4>Web Development</h4>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                    <span class="pill-skill" data-lang="html">HTML</span>
+                    <span class="pill-skill" data-lang="css">CSS</span>
+                    <span class="pill-skill" data-lang="bootstrap">Bootstrap</span>
+                  </div>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Interfaces Responsivas</h5>
+                  <p>Maquetación semántica, animaciones fluidas, diseño adaptativo móvil y sistemas de diseño modernos.</p>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Databases -->
+          <div class="col-md-6 col-lg-3 skill-col">
+            <div class="flip-card vuelo-abajo">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-solid fa-table-list simbolo-habilidad"></i>
+                  <h4>Databases</h4>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                    <span class="pill-skill" data-lang="mysql">MySQL</span>
+                    <span class="pill-skill" data-lang="oracle">Oracle SQL*Plus</span>
+                  </div>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Gestión de Datos</h5>
+                  <p>Modelado entidad-relación, consultas complejas, normalización y administración de bases de datos relacionales.</p>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Other -->
+          <div class="col-md-6 col-lg-3 skill-col">
+            <div class="flip-card vuelo-der">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <i class="fa-solid fa-microchip simbolo-habilidad"></i>
+                  <h4>Other</h4>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                    <span class="pill-skill" data-lang="arqui">Arquitectura de Computadoras</span>
+                  </div>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Hardware & Sistemas</h5>
+                  <p>Comprensión interna de procesamiento, sistema binario, memoria y rendimiento de hardware.</p>
+                  <span class="icono-giro"><i class="fa-solid fa-rotate"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: TESTIMONIOS -->
+    <section class="pantalla" id="sec-4">
+      <div class="container h-100 d-flex flex-column justify-content-center pt-5">
+        <div class="halo-editorial"></div>
+
+        <div class="contenedor-testimonios mx-auto text-center">
+          <span class="seccion-subtitulo brillo-permanente">REFERENCIAS REALES</span>
+          <h2 class="titulo-seccion mb-3">Mis <em>Testimonios</em></h2>
+
+          <!-- CITA GRANDE CENTRAL -->
+          <div class="cita-escenario" id="citaEscenario">
+            <p class="frase-gigante" id="fraseTexto">
+              “Michelle es una estudiante muy aplicada e inteligente. Es muy trabajadora y siempre busca el camino mas cómodo y versatil a la hora de realizar sus actividades.”            
+            </p>
+            <div class="autor-info">
+              <h5 class="autor-nombre" id="autorNombre">Dylan Paul Bustos Mauricio </h5>
+              <span class="autor-cargo" id="autorCargo">Alumno de Diseño y Desarrollo de  Software • TECSUP</span>
+              <div class="autor-redes" id="autorRedes">
+                <a href="mailto:dylan.bustos@tecsup.edu.pe" title="Correo"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/51956388779" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SELECTOR CIRCULAR DE PERSONAS -->
+          <div class="avatares-selector">
+            <button type="button" class="avatar-btn activo" data-index="0">
+              <img src="img/DylanBustos.jpeg" alt="Dylan Busto" class="avatar-circulo">
+              <span class="avatar-etiqueta">Dylan Bustos </span>
+            </button>
+
+            <button type="button" class="avatar-btn" data-index="1">
+              <img src="img/Michelle.png" alt="Valeria Q." class="avatar-circulo">
+              <span class="avatar-etiqueta">Valeria Q.</span>
+            </button>
+
+            <button type="button" class="avatar-btn" data-index="2">
+              <img src="img/MiguelPallin.jpg" alt="Miguel Pallin" class="avatar-circulo">
+              <span class="avatar-etiqueta">Mg. Miguel</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 6: CONTACTOS -->
+    <section class="pantalla" id="sec-5">
+      <div class="container h-100 d-flex flex-column justify-content-between pt-5 pb-2">
+        
+        <!-- ESPACIADOR PARA EL NAVBAR -->
+        <div></div>
+
+        <!-- 2 COLUMNAS CENTRADO -->
+        <div class="row w-100 align-items-end justify-content-center g-4 my-auto mx-auto" style="max-width: 960px;">
+          
+          <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+          <div class="col-lg-7">
+            <div class="contacto-wrapper w-100">
+              
+              <!-- (.lottie) -->
+              <div class="michi-escenario mx-auto">
+                <div class="michi-halo"></div>
+                <dotlottie-player id="michiPersonaje" src="img/gato-huellitas.lottie" background="transparent" speed="1" loop autoplay class="michi-img"></dotlottie-player>
+              </div>
+
+              <!-- FORMULARIO -->
+              <form id="formContactos" action="envio.php" method="POST" class="form-editorial p-3">
+                <div class="row g-2">
+                  <div class="col-12">
+                    <label class="form-label small text-uppercase mb-1" style="letter-spacing: 1.5px; color: var(--sky-blue); font-size: 0.68rem;">Nombre Completo</label>
+                    <input type="text" id="inputNombre" name="nombres" class="form-control input-editorial" placeholder="Ej. Megan Torres" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label small text-uppercase mb-1" style="letter-spacing: 1.5px; color: var(--sky-blue); font-size: 0.68rem;">Correo Electrónico</label>
+                    <input type="email" id="inputCorreo" name="correo" class="form-control input-editorial" placeholder="megan@correo.com" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label small text-uppercase mb-1" style="letter-spacing: 1.5px; color: var(--sky-blue); font-size: 0.68rem;">Teléfono</label>
+                    <input type="tel" id="inputTelefono" name="direction" class="form-control input-editorial" placeholder="+51 999 888 777" required>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label small text-uppercase mb-1" style="letter-spacing: 1.5px; color: var(--old-rose); font-size: 0.68rem;">Consulta</label>
+                    <textarea id="inputConsulta" name="comentarios" rows="2" class="form-control input-editorial" placeholder="Cuéntame sobre tu proyecto o consulta..." required></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-editorial w-100 mt-2 py-2 anim-elastico" id="btnEnviarConsulta">
+                  Enviar Consulta <i class="fa-solid fa-paper-plane ms-2"></i>
+                </button>
+
+                <p id="estadoContactos" class="small text-center mt-1 mb-0" style="color: var(--old-rose); min-height: 14px; font-size: 0.78rem;"></p>
+              </form>
+
+            </div>
+          </div>
+
+          <!-- COLUMNA DERECHA: CONÉCTATE -->
+          <div class="col-lg-5 d-flex flex-column justify-content-end">
+            
+            <div class="text-center text-lg-start mb-3">
+              <h2 class="titulo-seccion mb-0" style="font-size: clamp(2rem, 3.2vw, 2.6rem); line-height: 1.15;">
+                Envíame una <em>Consulta</em>
+              </h2>
+            </div>
+
+            <div class="accesos-lateral p-3">
+              <span class="accesos-etiqueta d-block mb-2">CONÉCTATE DIRECTAMENTE</span>
+              
+              <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                <li>
+                  <a href="mailto:cameronleonleyva@gmail.com" class="acceso-item" data-chat="Correo">
+                    <span class="acceso-icono"><i class="fa-solid fa-envelope"></i></span>
+                    <div class="acceso-info">
+                      <small>Correo Electrónico</small>
+                      <span>cameronleonleyva@gmail.com</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://wa.me/51968775429" target="_blank" class="acceso-item" data-chat="WhatsApp">
+                    <span class="acceso-icono"><i class="fa-brands fa-whatsapp"></i></span>
+                    <div class="acceso-info">
+                      <small>Teléfono / WhatsApp</small>
+                      <span>+51 968 775 429</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.linkedin.com/in/michelle-cameron-leon-leyva-076a423b7/" target="_blank" class="acceso-item" data-chat="LinkedIn">
+                    <span class="acceso-icono"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <div class="acceso-info">
+                      <small>LinkedIn</small>
+                      <span>Michelle Cameron Leon Leyva</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://github.com/Michi-leon" target="_blank" class="acceso-item" data-chat="GitHub">
+                    <span class="acceso-icono"><i class="fa-brands fa-github"></i></span>
+                    <div class="acceso-info">
+                      <small>GitHub</small>
+                      <span>@Michi-leon</span>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.tiktok.com/@mishileonidas" target="_blank" class="acceso-item" data-chat="TikTok">
+                    <span class="acceso-icono"><i class="fa-brands fa-tiktok"></i></span>
+                    <div class="acceso-info">
+                      <small>TikTok</small>
+                      <span>@michileonidas</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer-editorial w-100 text-center">
+          <div class="footer-linea"></div>
+          <p class="footer-copy mb-0">© 2026 Michelle Cameron Leon Leyva</p>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VENTANITA (MODAL) FUERA DE MAIN PARA DEMO INTERACTIVA -->
+  <div class="modal fade" id="modalLenguaje" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-editorial">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="modalTitulo">Demo</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-6">
+              <small class="text-uppercase" style="color: var(--sky-blue); letter-spacing: 2px;">Código / Lógica</small>
+              <pre class="codigo-box mt-2"><code id="modalCodigo"></code></pre>
+            </div>
+            <div class="col-md-6">
+              <small class="text-uppercase" style="color: var(--old-rose); letter-spacing: 2px;">Ejecución en Vivo</small>
+              <div class="demo-viva mt-2" id="modalDemoViva"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/f0afafa2dd.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+  <script src="js/scroll.js"></script>
+  <script src="js/inicio.js"></script>
+  <script src="js/proyecto.js"></script>
+  <script src="js/presentacion.js"></script>
+  <script src="js/habilidades.js"></script>
+  <script src="js/testimonio.js"></script>
+  <script src="js/efectos-textos.js"></script>
+  <script src="js/contactos.js"></script>
+</body>
+</html>

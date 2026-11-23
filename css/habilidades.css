@@ -1,0 +1,133 @@
+.flip-card {
+  background-color: transparent;
+  height: 270px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.volteada .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 1.8rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(245, 239, 234, 0.1);
+}
+
+.flip-card-front {
+  background: rgba(245, 239, 234, 0.03);
+}
+
+.flip-card-front:hover {
+  border-color: var(--old-rose);
+}
+
+.flip-card-back {
+  background: linear-gradient(145deg, #241b1a, #161b22);
+  border-color: var(--sky-blue);
+  transform: rotateY(180deg);
+}
+
+.flip-card-back h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--old-rose);
+  margin-bottom: 0.8rem;
+}
+
+.flip-card-back p {
+  font-size: 0.88rem;
+  color: rgba(245, 239, 234, 0.85);
+  line-height: 1.5;
+}
+
+.simbolo-habilidad { font-size: 2rem; color: var(--sky-blue); margin-bottom: 0.8rem; }
+.flip-card-front h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; }
+
+.pill-skill {
+  display: inline-block;
+  background: rgba(245, 239, 234, 0.05);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.95rem;
+  border-radius: 50px;
+  border: 1px solid rgba(245, 239, 234, 0.14);
+  color: rgba(245, 239, 234, 0.85);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.pill-skill:hover {
+  background-color: rgba(212, 150, 167, 0.15);
+  border-color: var(--old-rose);
+  color: var(--old-rose);
+  transform: translateY(-2px);
+}
+
+.hint-flip {
+  position: absolute;
+  bottom: 12px;
+  font-size: 0.7rem;
+  color: rgba(245, 239, 234, 0.4);
+}
+
+/* Estilos de la ventanita modal */
+.modal-editorial {
+  background-color: #181312;
+  color: var(--text-cream);
+  border: 1px solid var(--old-rose);
+  border-radius: 20px;
+}
+
+.codigo-box {
+  background-color: #0e0c0b;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: var(--sky-blue);
+  border: 1px solid rgba(245, 239, 234, 0.08);
+  margin: 0;
+}
+
+.demo-viva {
+  background-color: #12151A;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 150, 167, 0.3);
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.icono-giro {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 0.85rem;
+  color: rgba(245, 239, 234, 0.35);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.flip-card-front:hover .icono-giro {
+  color: var(--old-rose);
+  transform: rotate(45deg);
+}
